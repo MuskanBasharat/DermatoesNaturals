@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dermatoes Naturals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" aria-current="page" class="logo">
+                <img src="images/Dermatoes.png" width="200" style="margin-left: -30px;" alt="Dermatoes Naturals Logo" class="logo-Dermatoes-new"/>
+            </a>
+            <div class="navs nav-links" id="navs" style="display: flex;">
+                <a href="#product" class="nav-bars first" onclick="hideNav()">Products</a>
+                <a href="#about" class="nav-bars" onclick="hideNav()">About</a>
+                <a href="#contact" class="nav-bars" onclick="hideNav()">Contact</a>
+                <a href="#review" class="nav-bars" onclick="hideNav()">Review</a>
+                <div class="social-icons-div tablet"></div>
+            </div>
+            <div class="left">
+                <div class="search-container" id="searchButton">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10.5" cy="10.5" r="7.5" stroke="black" stroke-width="2" style="fill:none"></circle>
+                        <path d="M17.1213 15.2929L16.4142 14.5858L15 16L15.7071 16.7071L17.1213 15.2929ZM19.2426 20.2426C19.6331 20.6332 20.2663 20.6332 20.6568 20.2426C21.0473 19.8521 21.0473 19.219 20.6568 18.8284L19.2426 20.2426ZM15.7071 16.7071L19.2426 20.2426L20.6568 18.8284L17.1213 15.2929L15.7071 16.7071Z" fill="black" style="stroke:none;"></path>
+                    </svg>
+                </div>
+                <div class="burger menu-button">
+                    <div onclick="toggleNav()" id="toggleButton" aria-label="Toggle navigation">☰</div>
+                </div>
+                <div class="cart">
+                    <button id="cartButton" style="background-color: white; border: none; width:50px; height:50px; text-decoration:none" aria-label="Cart">
+                        <img src="images/cart.png" alt="Cart Icon">
+                        <span id="cartCount">0</span>
+                    </button>
+                    <div id="cartDropdown" class="hidden">
+                        <ul id="cartItems" style="font-style: italic">Your cart is empty.</ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <hr>
+    <div class="body">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="images/1.png" class="img" alt="Slide 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/2.png" class="img" alt="Slide 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/3.png" class="img" alt="Slide 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/4.png" class="img" alt="Slide 4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/5.png" class="img" alt="Slide 4">
+                </div>
+                <div class="carousel-slide">
+                   <img src="images/6.png" class="img" alt="Slide 4">
+                </div>
+                <div class="carousel-slide">
+                <img src="images/7.png" class="img" alt="Slide 4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="" alt="">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+<button id="backToTop" title="Go to top">↑</button>
+    <!-- WhatsApp Button -->
+    
+    <a  href="https://wa.me/+923026673345?text=Hello%20I%20need%20assistance"  class="whatsapp-float" onclick="sendWhatsAppMessage()">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+
+      </a>
+    <main>
+        <aside class="filters">
+            <h2 class="h2-mobile">Filters</h2>
+            <div class="filter">
+                <div>
+                    <h3>Daily Care</h3>
+                    <label><input type="checkbox" value="skin-care"> Skin Care</label>
+                    <br>
+                    <label><input type="checkbox" value="hair-care"> Hair Care</label>
+                    <br>
+                    <label><input type="checkbox" value="body-care"> Body Care</label>
+                </div>
+                <div>
+                    <h3>Skin Concerns</h3>
+                    <label><input type="checkbox" value="skin-care"> Acne</label>
+                    <br>
+                    <label><input type="checkbox" value="hair-care"> Dry skin</label>
+                    <br
+                </div>
+            </div>
+        </aside>
+        <hr>
+        <section class="products container-wide-navigation" id="product">
+
+            <div class="product service-item skin-care">
+                <a href="project/detail.html?id=vitamin-c-serum">
+                    <img src="images/1pro.png" alt="Vitamin C Serum" class="proimg">
+                    <div alt="Corner Badge" class="corner-image"><img src="images/10%.png" class="proimg"></div>
+                <div class="product-text">
+                    <h4>Vitamin C Serum</h4>
+                    <strike style="color:black;">Rs. 900</strike>
+                    <p style="color: red;"> Rs. 810 </p>
+                </a>
+                        <button id="Product-det">Add to cart</button>
+                    
+                </div>
+            </div>
+            
+            <div class="product service-item skin-care">
+                <a href="project/detail.html?id=hyaluronic-serum">
+                <img src="images/2pro.png" alt="Product 1"class="proimg">
+                <div class="product-text">
+                    <h4>Hyaluronic Serum</h4>
+                <br>
+                <p style="color: red;">Rs. 600</p>
+            </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+
+            
+            <div class="product service-item skin-care">
+                <a href="project/detail.html?id=niacinamide-serum">
+
+                <img src="images/3pro.png" alt="Product 1"class="proimg">
+                <div class="product-text">
+                    <h4>Niacinamide Serum</h4>
+               <br>
+                <p style="color: red;">Rs. 900</p>
+                 </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+           
+            <div class="product service-item skin-care">
+                <a href="project/detail.html?id=salicylic-serum">
+
+                <img src="images/4pro.png" alt="Product 1" class="proimg">
+                <div class="product-text">
+                    <h4>Salicylic Serum (2%)</h4>
+               <br>
+                <p style="color: red;">Rs. 900</p>
+                </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item hair-care skin-care">
+                <a href="project/detail.html?id=aloe-vera-gel">
+
+                <img src="images/7pro.png" alt="Product 1" class="proimg">
+
+                <div class="product-text">
+                    <h4>75% Alovera Gel (Organic)</h4>
+                    <br>
+                <p style="color: red;"> Rs. 1020 </p>
+            </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item skin-care">
+                <a href="project/detail.html?id=super-face-gel">
+
+                <img src="images/6pro.png" alt="Product 1" class="proimg">
+
+                <div class="product-text">
+                    <h4>Super Face Gel</h4>
+               <br>
+                <p style="color: red;"> Rs. 900 </p>
+                 </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item skin-care">
+                <a href="project/detail.html?id=ha-massage-gel">
+
+                <img src="images/6pro.png" alt="Product 1" class="proimg">
+
+                <div class="product-text">
+                    <h4>H.A Massage Gel</h4>
+               <br>
+                <p style="color: red;"> Rs. 900 </p>
+                 </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item skin-care">
+                <a href="project/detail.html?id=whitening-cream">
+
+                <img src="images/5pro.png" alt="Product 1" class="proimg">
+                <div class="product-text">
+                   
+                    <h4>Whitening Cream</h4>
+               <br>
+                <p style="color: red;">Rs. 4,000</p>
+                 </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item skin-care">
+                <a href="project/detail.html?id=massage-cream">
+
+                <img src="images/6pro.png" alt="Product 1" class="proimg">
+
+                <div class="product-text">
+                    <h4>Massage Cream</h4>
+               <br> 
+                <p style="color: red;"> Rs. 900 </p>
+                </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item skin-care">
+                <a href="project/detail.html?id=anti-acne-cream">
+
+                <img src="images/6pro.png" alt="Product 1" class="proimg">
+                <div alt="Corner Badge" class="corner-image"><img src="images/10%.png" class="proimg"></div>
+
+                <div class="product-text">
+                    <h4>Anti-Acne Cream</h4>
+               
+                <strike style="color:black;">Rs. 1000</strike>
+                <p style="color: red;"> Rs. 900 </p>
+            </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            
+            <div class="product service-item  skin-care">
+                <a href="project/detail.html?id=brightening-cream">
+
+                <img src="images/7pro.png" alt="Product 1" class="proimg">
+                <div alt="Corner Badge" class="corner-image"><img src="images/10%.png" class="proimg"></div>
+
+                <div class="product-text">
+                    <h4>Brightening Cream</h4>
+                
+                <strike style="color:black;">Rs. 1000</strike>
+                <p style="color: red;"> Rs. 900 </p>
+            </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item hair-care">
+                <a href="project/detail.html?id=anti-hairfall-oil">
+
+                <img src="images/7pro.png" alt="Product 1" class="proimg">
+                <div alt="Corner Badge" class="corner-image"><img src="images/15%.png" class="proimg"></div>
+
+                <div class="product-text">
+                    <h4>Anti-Hairfall Oil (Organic)</h4>
+                <strike style="color:black;">Rs. 1200</strike>
+                <p style="color: red;"> Rs. 1020 </p>
+            </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item skin-care">
+                <a href="project/detail.html?id=sa-gel-face-wash">
+
+                <img src="images/7pro.png" alt="Product 1" class="proimg">
+
+                <div class="product-text">
+                    <h4>S.A Gel Face Wash</h4>
+                     <br>
+                <p style="color: red;"> Rs. 1020 </p>
+               </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item  skin-care">
+                <a href="project/detail.html?id=brightening-face-wash">
+
+                <img src="images/7pro.png" alt="Product 1" class="proimg">
+
+                <div class="product-text">
+                    <h4>Brightening Face Wash</h4>
+                    <br> 
+                <p style="color: red;"> Rs. 1020 </p>
+               </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item  skin-care">
+                <a href="project/detail.html?id=foaming-face-wash">
+
+                <img src="images/7pro.png" alt="Product 1" class="proimg">
+                <div class="product-text">
+                    <h4>Foaming Face Wash</h4>
+                    <br>
+                <p style="color: red;"> Rs. 1020 </p>
+            </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+           
+            <div class="product service-item body-care">
+                <a href="project/detail.html?id=moisturizing-bodywash">
+
+                <img src="images/7pro.png" alt="Product 1" class="proimg">
+
+                <div class="product-text">
+                    <h4>Moisturizing BodyWash</h4>
+                    <br>
+                <p style="color: red;"> Rs. 1020 </p>
+            </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item body-care">
+                <a href="project/detail.html?id=anti-bacterial-handwash">
+
+                <img src="images/7pro.png" alt="Product 1" class="proimg">
+
+                <div class="product-text">
+                    <h4>Anti Bacterial HandWash</h4>
+                     <br>
+                <p style="color: red;"> Rs. 1020 </p>
+              
+            </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item body-care skin-care">
+                <a href="project/detail.html?id=gentle-cleanser">
+
+                <img src="images/7pro.png" alt="Product 1" class="proimg">
+
+                <div class="product-text">
+                    <h4>Gentle Cleanser (Foaming)</h4>
+                    <br>
+                <p style="color: red;"> Rs. 1020 </p>
+            </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item body-care skin-care">
+                <a href="project/detail.html?id=cleansing-water">
+
+                <img src="images/7pro.png" alt="Product 1" class="proimg">
+
+                <div class="product-text">
+                    <h4>Cleansing Water</h4>
+                    <br>
+                <p style="color: red;"> Rs. 1020 </p>
+            </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            <div class="product service-item body-care  skin-care">
+                <a href="project/detail.html?id=vitamin-c-toner">
+
+                <img src="images/6pro.png" alt="Product 1" class="proimg">
+
+                <div class="product-text">
+                    <h4>Vitamin C Toner</h4>
+               <br>
+                <p style="color: red;"> Rs. 900 </p>
+            </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+
+            <div class="product service-item body-care">
+                <a href="project/detail.html?id=body-scrub">
+
+                <img src="images/6pro.png" alt="Product 1" class="proimg">
+
+                <a class="product-text">
+                    <h4>Body Scrub</h4>
+               <br>
+                <p style="color: red;"> Rs. 900 </p>
+                </a>
+                <button id="Product-det">Add to Cart</button></div>
+            </div>
+            
+            </div>
+        </section>
+    </main>
+<br>
+<div class="dot-hr" >
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+<br>
+<section class="testimonials" id="review">
+  <h2>What Our Customers Say</h2>
+  <div class="carousel-container-slider">
+    <button class="slider-btn prev" onclick="slide(-1)">&#10094;</button>
+    <div class="carousel-track" id="carousel">
+      <!-- Cards -->
+      <div class="testimonial-card"><div class="card-content"><div class="stars">★★★★★</div><p>“Absolutely loved it!”</p><div>- Ayesha</div></div></div>
+      <div class="testimonial-card"><div class="card-content"><div class="stars">★★★★★</div><p>“Skin feels amazing.”</p><div>- Fatima</div></div></div>
+      <div class="testimonial-card"><div class="card-content"><div class="stars">★★★★★</div><p>“Great experience.”</p><div>- Sana</div></div></div>
+      <div class="testimonial-card"><div class="card-content"><div class="stars">★★★★★</div><p>“Quick delivery!”</p><div>- Zara</div></div></div>
+      <div class="testimonial-card"><div class="card-content"><div class="stars">★★★★★</div><p>“Highly recommend.”</p><div>- Meena</div></div></div>
+    </div>
+    <button class="slider-btn next" onclick="slide(1)">&#10095;</button>
+  </div>
+</section>
+    <div id="about" class="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h1 class="about-h">About</h1>
+                <p class="about-p">
+                    At Dermatoes Naturals, we believe that nature holds the key to radiant, healthy-looking skin. That's why we're dedicated to crafting effective, natural skincare products that harness the power of Mother Nature to nourish, protect, and transform your skin.
+
+Our journey began with a passion for natural skincare and a commitment to helping people achieve healthy, glowing skin without harsh chemicals or artificial ingredients. Our team of experts works tirelessly to research, formulate, and test each product, ensuring that every item that bears the Dermatoes Naturals name meets our high standards of quality, efficacy, and purity.
+
+From our carefully sourced natural ingredients to our eco-friendly packaging, every aspect of our business is guided by our core values of sustainability, integrity, and a deep respect for the natural world.
+
+At Dermatoes Naturals, we're not just creating skincare products – we're on a mission to empower you to love the skin you're in. Join us on our journey to natural, radiant beauty.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="subtext-contact" id="contact"><h2>Let's Connect</h2></div>
+    <div class="social-icons-div tablet">
+        <div class="social-icons-block">
+            <a href="https://www.instagram.com/dermatoesnaturals/" target="_blank" class="social-link w-inline-block" aria-label="Instagram">
+                <div class="contact-icon-svg w-embed">
+                    <img src="images/instagram.png" width="50px" height="50px" alt="Instagram Icon">
+                </div>
+            </a>
+            <a href="https://www.linkedin.com/in/dermatoes-naturals-131572221/" target="_blank" class="social-link w-inline-block" aria-label="LinkedIn">
+                <div class="contact-icon-svg w-embed">
+                    <img src="images/linkedin.png" width="50px" height="50px" alt="LinkedIn Icon">
+                </div>
+            </a>
+            <div target="_blank" class="social-link w-inline-block" aria-label="Facebook">
+                <div class="contact-icon-svg w-embed">
+                    <img src="images/facebook.png" width="50px" height="50px" alt="Facebook Icon">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details - Dermatoes Naturals</title>
+  <style>
+    html{
+    scroll-behavior: smooth;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-family: sans-serif
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 10px;
+    font-weight: 700
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 38px;
+    line-height: 44px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 30px;
+    line-height: 36px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #02357a;
+   
+}
+
+h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #02357a;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h4 {
+    margin-top: 10px;
+    color: #02357a;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+h5 {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 20px
+}
+
+h6 {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 18px
+}
+
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 35px;
+    margin-top: 0px;
+    margin-bottom: 10px
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+   .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo-dermatoes-new {
+    display: block;
+    margin: auto auto;
+}
+span{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+    .primary-button {
+        max-width: 150px;
+    border: 2px solid black;
+    box-shadow: 3px 3px 0 0 black;
+    color: white;
+    letter-spacing: .5px;
+    background-color: rgb(106, 148, 22);
+    border-radius: 12px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    line-height: 30px;
+    font-size: 15px;
+    text-decoration: none;
+    transition: box-shadow .25s cubic-bezier(.645,.045,.355,1),transform .25s cubic-bezier(.645,.045,.355,1);
+    display: inline-block
+}
+
+.primary-button:hover {
+    box-shadow: 6px 6px 0 0 black;
+    transform: translate(-4px,-4px)
+}
+    .product-detail-container {
+      display: flex;
+      flex-direction: row;
+      margin: 0px 40px;
+    }
+    .product-image {
+      flex: 1 1 300px;
+      text-align: center;
+      padding: 20px;
+    }
+    .product-image img {
+        margin-top:auto ;
+      max-width: 90%;
+      height: auto;
+    }
+    .product-info {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      flex: 1 1 300px;
+      padding: 20px;
+    }
+    .product-prices {
+      margin: 15px 0;
+    }
+    .old-price {
+      margin-right: 10px;
+      color: #555;
+    }
+    .new-price {
+      color: red;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    
+    #button-send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#button-send img {
+  width: 20px;
+  height: 20px;
+}
+
+#button-send:hover {
+  background-color: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+    .quantity-selector {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin: 5px 15px;
+    }
+    
+    .quantity-selector input[type="number"] {
+        width: 50px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .quantity-selector button {
+        padding: 5px 10px;
+    }
+   
+    
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .product-detail-container {
+        flex-direction: column;
+        align-items: center;
+      }
+  #button-send {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+
+    }
+  
+    </style>
+    
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="../index.html" aria-current="page" class="logo">
+        <img src="../images/Dermatoes.png" width="300" alt="Dermatoes Naturals Logo" class="logo-Dermatoes-new" />
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="product-detail-container">
+      <div class="product-image">
+        <img id="productImage" src="images/1pro.png" alt="product-image" />
+      </div>
+      <div class="product-info">
+        <h1 id="productTitle">Vitamin C Serum</h1>
+        <p id="productDescription">
+          This Vitamin C Serum is carefully formulated to brighten your skin, reduce signs of aging, and provide an antioxidant boost. Enriched with natural ingredients, it helps improve skin texture and overall radiance.
+        </p>
+        <div class="product-prices">
+          <span class="old-price"><strike>Rs. 900</strike></span>
+          <span class="new-price">Rs. 810</span>
+        </div>
+        <div class="quantity-selector">
+          <label>Quantity:</label>
+          <input type="number" id="productQuantity" value="1" min="1">
+    </div>
+    <button id="button-send" onclick="sendWhatsAppMessage()">Place Order on WhatsApp</button>
+
+  </main>
+
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+
+    const products = {
+  "vitamin-c-serum": {
+    title: "Vitamin C Serum",
+    image: "../images/1pro.png",
+    description: "This Vitamin C Serum is carefully formulated to brighten your skin, reduce signs of aging, and provide an antioxidant boost. Enriched with natural ingredients, it helps improve skin texture and overall radiance.",
+    oldPrice: "Rs. 900",
+    newPrice: "Rs. 810",
+    reviews: []
+  },
+  "hyaluronic-serum": {
+    title: "Hyaluronic Serum",
+    image: "../images/2pro.png",
+    description: "A deeply hydrating serum infused with hyaluronic acid to plump, moisturize, and smooth the skin. Perfect for dry and dehydrated skin.",
+    oldPrice: null,
+    newPrice: "Rs. 600",
+    reviews: []
+  },
+  "niacinamide-serum": {
+    title: "Niacinamide Serum",
+    image: "../images/3pro.png",
+    description: "A lightweight serum designed to reduce acne, minimize pores, and brighten skin tone with the power of Niacinamide.",
+    oldPrice: null,
+    newPrice: "Rs. 900",
+    reviews: []
+  },
+  "salicylic-serum": {
+    title: "Salicylic Serum (2%)",
+    image: "../images/4pro.png",
+    description: "A 2% Salicylic Acid serum that helps to fight acne, unclog pores, and reduce breakouts for clear, smooth skin.",
+    oldPrice: null,
+    newPrice: "Rs. 900",
+    reviews: []
+  },
+  "aloe-vera-gel": {
+    title: "75% Aloe Vera Gel (Organic)",
+    image: "../images/7pro.png",
+    description: "An organic Aloe Vera Gel that soothes, hydrates, and nourishes the skin while providing anti-inflammatory benefits.",
+    oldPrice: null,
+    newPrice: "Rs. 1020",
+    reviews: []
+  },
+  "super-face-gel": {
+    title: "Super Face Gel",
+    image: "../images/6pro.png",
+    description: "A powerful face gel designed to provide deep hydration, refresh tired skin, and maintain a glowing complexion.",
+    oldPrice: null,
+    newPrice: "Rs. 900",
+    reviews: []
+  },
+  "ha-massage-gel": {
+    title: "H.A Massage Gel",
+    image: "../images/6pro.png",
+    description: "A hydrating and soothing massage gel enriched with Hyaluronic Acid to lock in moisture and leave skin soft and smooth.",
+    oldPrice: null,
+    newPrice: "Rs. 900",
+    reviews: []
+  },
+  "whitening-cream": {
+    title: "Whitening Cream",
+    image: "../images/5pro.png",
+    description: "A skin-brightening cream formulated to reduce dark spots, even skin tone, and enhance natural radiance.",
+    oldPrice: null,
+    newPrice: "Rs. 4000",
+    reviews: []
+  },
+  "massage-cream": {
+    title: "Massage Cream",
+    image: "../images/6pro.png",
+    description: "A nourishing massage cream that deeply hydrates and rejuvenates the skin while improving blood circulation.",
+    oldPrice: null,
+    newPrice: "Rs. 900",
+    reviews: []
+  },
+  "anti-acne-cream": {
+    title: "Anti-Acne Cream",
+    image: "../images/6pro.png",
+    description: "A powerful anti-acne cream that targets breakouts, reduces redness, and helps achieve clear skin.",
+    oldPrice: "Rs. 1000",
+    newPrice: "Rs. 900",
+    reviews: []
+  },
+  "brightening-cream": {
+    title: "Brightening Cream",
+    image: "../images/7pro.png",
+    description: "A brightening cream that improves skin tone, minimizes dullness, and promotes a youthful glow.",
+    oldPrice: "Rs. 1000",
+    newPrice: "Rs. 900",
+    reviews: []
+  },
+  "anti-hairfall-oil": {
+    title: "Anti-Hairfall Oil (Organic)",
+    image: "../images/7pro.png",
+    description: "An organic anti-hairfall oil that strengthens hair roots, reduces hair fall, and promotes healthy hair growth.",
+    oldPrice: "Rs. 1200",
+    newPrice: "Rs. 1020",
+    reviews: []
+  },
+  "sa-gel-face-wash": {
+    title: "S.A Gel Face Wash",
+    image: "../images/7pro.png",
+    description: "A gentle yet effective gel face wash that cleanses deep into pores, removes excess oil, and refreshes skin.",
+    oldPrice: null,
+    newPrice: "Rs. 1020",
+    reviews: []
+  },
+  "brightening-face-wash": {
+    title: "Brightening Face Wash",
+    image: "../images/7pro.png",
+    description: "A foaming face wash that brightens skin, removes impurities, and enhances overall skin radiance.",
+    oldPrice: null,
+    newPrice: "Rs. 1020",
+    reviews: []
+  },
+  "foaming-face-wash": {
+    title: "Foaming Face Wash",
+    image: "../images/7pro.png",
+    description: "A refreshing foaming face wash that gently cleanses while keeping skin hydrated and soft.",
+    oldPrice: null,
+    newPrice: "Rs. 1020",
+    reviews: []
+  },
+  "moisturizing-bodywash": {
+    title: "Moisturizing Body Wash",
+    image: "../images/7pro.png",
+    description: "A nourishing body wash that cleanses, hydrates, and leaves your skin feeling soft and smooth.",
+    oldPrice: null,
+    newPrice: "Rs. 1020",
+    reviews: []
+  },
+  "anti-bacterial-handwash": {
+    title: "Anti-Bacterial Hand Wash",
+    image: "../images/7pro.png",
+    description: "An antibacterial hand wash that effectively kills germs while keeping hands soft and moisturized.",
+    oldPrice: null,
+    newPrice: "Rs. 1020",
+    reviews: []
+  },
+  "gentle-cleanser": {
+    title: "Gentle Cleanser (Foaming)",
+    image: "../images/7pro.png",
+    description: "A mild foaming cleanser that removes dirt and oil without stripping the skin of its natural moisture.",
+    oldPrice: null,
+    newPrice: "Rs. 1020",
+    reviews: []
+  },
+  "cleansing-water": {
+    title: "Cleansing Water",
+    image: "../images/7pro.png",
+    description: "A lightweight cleansing water that removes makeup, dirt, and oil while hydrating the skin.",
+    oldPrice: null,
+    newPrice: "Rs. 1020",
+    reviews: []
+  },
+  "vitamin-c-toner": {
+    title: "Vitamin C Toner",
+    image: "../images/6pro.png",
+    description: "A refreshing toner infused with Vitamin C to brighten, tone, and balance the skin.",
+    oldPrice: null,
+    newPrice: "Rs. 900",
+    reviews: []
+  },
+  "body-scrub": {
+    title: "Body Scrub",
+    image: "../images/6pro.png",
+    description: "An exfoliating body scrub that removes dead skin cells, leaving your skin smooth and radiant.",
+    oldPrice: null,
+    newPrice: "Rs. 900",
+    reviews: []
+  },
+  
+}
+
+
+    if (productId && products[productId]) {
+      const product = products[productId];
+      document.getElementById('productTitle').textContent = product.title;
+      document.getElementById('productImage').src = product.image;
+      document.getElementById('productImage').alt = product.title;
+      document.getElementById('productDescription').textContent = product.description;
+      if (product.oldPrice!=null){
+        const priceContainer = document.querySelector('.product-prices');
+      priceContainer.innerHTML = `<span class="old-price price"><strike>${product.oldPrice}</strike></span>
+                                  <span class="new-price price">${product.newPrice}</span>`;
+      }
+      else {
+        const priceContainer = document.querySelector('.product-prices');
+      priceContainer.innerHTML = `<span class="new-price">${product.newPrice}</span>`;
+      }
+    }
+  
+// for whatsapp messages:
+
+        function sendWhatsAppMessage() {
+            const product = document.getElementById("productTitle").innerText.trim();
+            const quantity = document.getElementById("productQuantity").value;
+            const brand = "Dermatos Naturals"; 
+          
+
+            const message = `Hi! I need a product of your brand:\n\nProduct: ${product}\nBrand: ${brand}\nQuantity: ${quantity}\n\nPlease confirm availability and payment details.`;
+        
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/+923205928494?text=${encodedMessage}`; // Replace with your number
+            window.open(whatsappURL, '_blank');
+        }
+
+
+  </script>
+</body>
+</html>
