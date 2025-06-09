@@ -4,7 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Details - Dermatoes Naturals</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
+      .contact-section {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 60px 20px;
+  margin-top: 50px;
+}
+
+.contact-section h2 {
+  color: #02357a;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.contact-icons .icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.icon.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366); }
+.icon.facebook { background: #1877f2; }
+.icon.linkedin { background: #0077b5; }
+.icon.whatsapp { background: #25d366; }
+.icon.email { background: #ff6f61; }
+
+.contact-icons .icon:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
     html{
     scroll-behavior: smooth;
 }
@@ -85,13 +137,189 @@ a{
     align-items: center;
     padding: 10px 0;
 }
+/* Description styling */
+.description-toggle-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
 
+.description-button {
+  background: linear-gradient(135deg, #6a9416, #55750e);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.description-button:hover {
+  background: linear-gradient(135deg, #55750e, #6a9416);
+  transform: translateY(-2px);
+}
+
+.product-full-description {
+  margin: 20px auto 40px;
+  padding: 25px 30px;
+  background-color: #f4f4f4;
+  border-left: 5px solid #6a9416;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  max-width: 700px;
+  text-align: left;
+  animation: slideFadeIn 0.5s ease;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.product-full-description h3 {
+  color: #02357a;
+  margin-top: 10px;
+}
+
+.product-full-description p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* WhatsApp Form Styles */
+.whatsapp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.whatsapp-form input,
+.whatsapp-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.whatsapp-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.whatsapp-form input:focus,
+.whatsapp-form textarea:focus {
+  outline: none;
+  border-color: #075e54;
+  box-shadow: 0 0 0 2px rgba(7, 94, 84, 0.2);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 20px 15px;
+    width: 95%;
+  }
+  
+  .whatsapp-form input,
+  .whatsapp-form textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
 .logo-dermatoes-new {
     display: block;
     margin: auto auto;
 }
 span{
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 15px 0;
+}
+
+.quantity-btn {
+  width: 30px;
+  height: 30px;
+  background: #6a9416;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.quantity-btn:hover {
+  background: #55750e;
+}
+
+.quantity-selector input[type="number"] {
+  width: 50px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
     .primary-button {
@@ -182,21 +410,7 @@ span{
   transform: translateY(-2px);
 }
 
-    .quantity-selector {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        margin: 5px 15px;
-    }
-    
-    .quantity-selector input[type="number"] {
-        width: 50px;
-        text-align: center;
-        cursor: pointer;
-    }
-    .quantity-selector button {
-        padding: 5px 10px;
-    }
+   
    
     
     /* Responsive adjustments */
@@ -221,7 +435,7 @@ span{
   <header>
     <nav class="navbar">
       <a href="../index.html" aria-current="page" class="logo">
-        <img src="../images/Dermatoes.png" width="300" alt="Dermatoes Naturals Logo" class="logo-Dermatoes-new" />
+        <img src="https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/Dermatoes.png" width="300" alt="Dermatoes Naturals Logo" class="logo-Dermatoes-new" />
       </a>
     </nav>
   </header>
@@ -229,7 +443,7 @@ span{
   <main>
     <div class="product-detail-container">
       <div class="product-image">
-        <img id="productImage" src="images/1pro.png" alt="product-image" />
+        <img id="productImage" src="https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/1pro.png" alt="product-image" />
       </div>
       <div class="product-info">
         <h1 id="productTitle">Vitamin C Serum</h1>
@@ -241,12 +455,57 @@ span{
           <span class="new-price">Rs. 810</span>
         </div>
         <div class="quantity-selector">
-          <label>Quantity:</label>
-          <input type="number" id="productQuantity" value="1" min="1">
-    </div>
+  <label>Quantity:</label>
+  <button class="quantity-btn minus" onclick="decreaseQuantity()">-</button>
+  <input type="number" id="productQuantity" value="1" min="1">
+  <button class="quantity-btn plus" onclick="increaseQuantity()">+</button>
+</div>
     <button id="button-send" onclick="sendWhatsAppMessage()">Place Order on WhatsApp</button>
+<!-- WhatsApp Order Form Modal -->
+<div id="whatsappModal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button class="close-modal primary-button" id="closeWhatsappModal">×</button>
+    <h3>Complete Your Order</h3>
+    <form id="orderForm" class="whatsapp-form">
+      <input type="text" id="customerName" placeholder="Your Full Name" required>
+      <input type="number" id="customerPhone" placeholder="Reciever Phone number" required>
+      <textarea id="customerAddress" placeholder="Your Full Delivery Address" required></textarea>
+      <input type="hidden" id="productInfo">
+      <input type="hidden" id="productQuantity">
+      <button type="submit" class="primary-button" id="submitOrderBtn">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
 
   </main>
+<div class="description-toggle-wrapper">
+  <button class="description-button" id="toggleDescriptionBtn">Show Description</button>
+  <div id="productFullDescription" class="product-full-description hidden"></div>
+</div>
+
+<section id="contact" class="contact-section">
+  <h2>Let's Connect</h2>
+  <p>Follow us on social media or get in touch directly.</p>
+  <div class="contact-icons">
+    <a href="https://www.instagram.com/dermatoesnaturals" target="_blank" class="icon instagram" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="#contact" target="_blank" class="icon facebook" aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/dermatoes-naturals-131572221/" target="_blank" class="icon linkedin" aria-label="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://wa.me/923026673345" target="_blank" class="icon whatsapp" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="mailto:saqlainli110011@email.com" class="icon email" aria-label="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+</section>
 
 
   <script>
@@ -256,171 +515,340 @@ span{
     const products = {
   "vitamin-c-serum": {
     title: "Vitamin C Serum",
-    image: "../images/1pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/1pro.png",
     description: "This Vitamin C Serum is carefully formulated to brighten your skin, reduce signs of aging, and provide an antioxidant boost. Enriched with natural ingredients, it helps improve skin texture and overall radiance.",
     oldPrice: "Rs. 900",
     newPrice: "Rs. 810",
-    reviews: []
+    descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
+   
   },
   "hyaluronic-serum": {
     title: "Hyaluronic Serum",
-    image: "../images/2pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/2pro.png",
     description: "A deeply hydrating serum infused with hyaluronic acid to plump, moisturize, and smooth the skin. Perfect for dry and dehydrated skin.",
     oldPrice: null,
     newPrice: "Rs. 600",
-    reviews: []
+    descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
+   
   },
   "niacinamide-serum": {
     title: "Niacinamide Serum",
-    image: "../images/3pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/3pro.png",
     description: "A lightweight serum designed to reduce acne, minimize pores, and brighten skin tone with the power of Niacinamide.",
     oldPrice: null,
     newPrice: "Rs. 900",
-    reviews: []
+    descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
+   
   },
   "salicylic-serum": {
     title: "Salicylic Serum (2%)",
-    image: "../images/4pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/4pro.png",
     description: "A 2% Salicylic Acid serum that helps to fight acne, unclog pores, and reduce breakouts for clear, smooth skin.",
     oldPrice: null,
     newPrice: "Rs. 900",
-    reviews: []
+    descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
+   
   },
   "aloe-vera-gel": {
     title: "75% Aloe Vera Gel (Organic)",
-    image: "../images/7pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/7pro.png",
     description: "An organic Aloe Vera Gel that soothes, hydrates, and nourishes the skin while providing anti-inflammatory benefits.",
     oldPrice: null,
     newPrice: "Rs. 1020",
-    reviews: []
+    descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
+   
   },
   "super-face-gel": {
     title: "Super Face Gel",
-    image: "../images/6pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/6pro.png",
     description: "A powerful face gel designed to provide deep hydration, refresh tired skin, and maintain a glowing complexion.",
     oldPrice: null,
     newPrice: "Rs. 900",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
   },
   "ha-massage-gel": {
     title: "H.A Massage Gel",
-    image: "../images/6pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/6pro.png",
     description: "A hydrating and soothing massage gel enriched with Hyaluronic Acid to lock in moisture and leave skin soft and smooth.",
     oldPrice: null,
     newPrice: "Rs. 900",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
   },
   "whitening-cream": {
     title: "Whitening Cream",
-    image: "../images/5pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/5pro.png",
     description: "A skin-brightening cream formulated to reduce dark spots, even skin tone, and enhance natural radiance.",
     oldPrice: null,
     newPrice: "Rs. 4000",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
   },
   "massage-cream": {
     title: "Massage Cream",
-    image: "../images/6pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/6pro.png",
     description: "A nourishing massage cream that deeply hydrates and rejuvenates the skin while improving blood circulation.",
     oldPrice: null,
     newPrice: "Rs. 900",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
   },
   "anti-acne-cream": {
     title: "Anti-Acne Cream",
-    image: "../images/6pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/6pro.png",
     description: "A powerful anti-acne cream that targets breakouts, reduces redness, and helps achieve clear skin.",
     oldPrice: "Rs. 1000",
     newPrice: "Rs. 900",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
   },
   "brightening-cream": {
     title: "Brightening Cream",
-    image: "../images/7pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/7pro.png",
     description: "A brightening cream that improves skin tone, minimizes dullness, and promotes a youthful glow.",
     oldPrice: "Rs. 1000",
     newPrice: "Rs. 900",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
   },
   "anti-hairfall-oil": {
     title: "Anti-Hairfall Oil (Organic)",
-    image: "../images/7pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/7pro.png",
     description: "An organic anti-hairfall oil that strengthens hair roots, reduces hair fall, and promotes healthy hair growth.",
     oldPrice: "Rs. 1200",
     newPrice: "Rs. 1020",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
   },
   "sa-gel-face-wash": {
     title: "S.A Gel Face Wash",
-    image: "../images/7pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/7pro.png",
     description: "A gentle yet effective gel face wash that cleanses deep into pores, removes excess oil, and refreshes skin.",
     oldPrice: null,
     newPrice: "Rs. 1020",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
   },
   "brightening-face-wash": {
     title: "Brightening Face Wash",
-    image: "../images/7pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/7pro.png",
     description: "A foaming face wash that brightens skin, removes impurities, and enhances overall skin radiance.",
     oldPrice: null,
     newPrice: "Rs. 1020",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
   },
   "foaming-face-wash": {
     title: "Foaming Face Wash",
-    image: "../images/7pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/7pro.png",
     description: "A refreshing foaming face wash that gently cleanses while keeping skin hydrated and soft.",
     oldPrice: null,
     newPrice: "Rs. 1020",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
   },
   "moisturizing-bodywash": {
     title: "Moisturizing Body Wash",
-    image: "../images/7pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/7pro.png",
     description: "A nourishing body wash that cleanses, hydrates, and leaves your skin feeling soft and smooth.",
     oldPrice: null,
     newPrice: "Rs. 1020",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
   },
   "anti-bacterial-handwash": {
     title: "Anti-Bacterial Hand Wash",
-    image: "../images/7pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/7pro.png",
     description: "An antibacterial hand wash that effectively kills germs while keeping hands soft and moisturized.",
     oldPrice: null,
     newPrice: "Rs. 1020",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
+
   },
   "gentle-cleanser": {
     title: "Gentle Cleanser (Foaming)",
-    image: "../images/7pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/7pro.png",
     description: "A mild foaming cleanser that removes dirt and oil without stripping the skin of its natural moisture.",
     oldPrice: null,
     newPrice: "Rs. 1020",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
   },
   "cleansing-water": {
     title: "Cleansing Water",
-    image: "../images/7pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/7pro.png",
     description: "A lightweight cleansing water that removes makeup, dirt, and oil while hydrating the skin.",
     oldPrice: null,
     newPrice: "Rs. 1020",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
   },
   "vitamin-c-toner": {
     title: "Vitamin C Toner",
-    image: "../images/6pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/6pro.png",
     description: "A refreshing toner infused with Vitamin C to brighten, tone, and balance the skin.",
     oldPrice: null,
     newPrice: "Rs. 900",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
   },
   "body-scrub": {
     title: "Body Scrub",
-    image: "../images/6pro.png",
+    image: "https://raw.githubusercontent.com/MuskanBasharat/DermatoesNaturals/refs/heads/main/images/6pro.png",
     description: "An exfoliating body scrub that removes dead skin cells, leaving your skin smooth and radiant.",
     oldPrice: null,
     newPrice: "Rs. 900",
-    reviews: []
+   descriptionHTML: `
+  <h3>Why You’ll Love It</h3>
+  <p>This foaming cleanser is gentle on sensitive skin and provides a refreshing clean without harsh chemicals.</p>
+  <h3>Key Ingredients</h3>
+  <p>Infused with aloe vera and green tea extract to calm and nourish your skin.</p>
+  <h3>How to Use</h3>
+  <p>Use a pea-sized amount on damp skin. Massage gently in circular motions and rinse with lukewarm water.</p>
+`
   },
   
 }
@@ -441,22 +869,110 @@ span{
         const priceContainer = document.querySelector('.product-prices');
       priceContainer.innerHTML = `<span class="new-price">${product.newPrice}</span>`;
       }
+      if (product.descriptionHTML) {
+  document.getElementById('productFullDescription').innerHTML = product.descriptionHTML;
+}
+
+
     }
   
-// for whatsapp messages:
+function increaseQuantity() {
+  const quantityInput = document.getElementById('productQuantity');
+  quantityInput.value = parseInt(quantityInput.value) + 1;
+}
 
-        function sendWhatsAppMessage() {
-            const product = document.getElementById("productTitle").innerText.trim();
-            const quantity = document.getElementById("productQuantity").value;
-            const brand = "Dermatos Naturals"; 
-          
+function decreaseQuantity() {
+  const quantityInput = document.getElementById('productQuantity');
+  if (parseInt(quantityInput.value) > 1) {
+    quantityInput.value = parseInt(quantityInput.value) - 1;
+  }
+}
 
-            const message = `Hi! I need a product of your brand:\n\nProduct: ${product}\nBrand: ${brand}\nQuantity: ${quantity}\n\nPlease confirm availability and payment details.`;
-        
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/+923205928494?text=${encodedMessage}`; // Replace with your number
-            window.open(whatsappURL, '_blank');
-        }
+// Toggle Description Button
+document.getElementById('toggleDescriptionBtn').addEventListener('click', function () {
+  const desc = document.getElementById('productFullDescription');
+  const isVisible = !desc.classList.contains('hidden');
+
+  if (isVisible) {
+    desc.classList.add('hidden');
+    this.textContent = 'Show Description';
+  } else {
+    desc.classList.remove('hidden');
+    this.textContent = 'Hide Description';
+  }
+});
+
+
+
+
+  </script>
+  <script>
+    // WhatsApp Order Functionality
+document.getElementById('button-send').addEventListener('click', function(e) {
+  e.preventDefault();
+  
+  // Get product info
+  const product = document.getElementById("productTitle").innerText.trim();
+  const quantity = document.getElementById("productQuantity").value;
+  
+  // Set hidden fields
+  document.getElementById('productInfo').value = product;
+  document.getElementById('productQuantity').value = quantity;
+  
+  // Show modal
+  document.getElementById('whatsappModal').style.display = 'flex';
+});
+
+// Close modal
+document.getElementById('closeWhatsappModal').addEventListener('click', function() {
+  document.getElementById('whatsappModal').style.display = 'none';
+});
+
+// Form submission
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Get form values
+  const name = document.getElementById('customerName').value.trim();
+  const phone = document.getElementById('customerPhone').value.trim();
+  const address = document.getElementById('customerAddress').value.trim();
+  const product = document.getElementById('productInfo').value;
+  const quantity = document.getElementById('productQuantity').value;
+  
+  // Validate inputs (removed city check)
+  if (!name || !phone || !address) {
+    alert('Please fill in all required fields');
+    return;
+  }
+  
+  // Format WhatsApp message
+  const message = `*New Order Request - Dermatoes Naturals*\n\n` +
+                  `*Product:* ${product}\n` +
+                  `*Quantity:* ${quantity}\n\n` +
+                  `*Customer Details*\n` +
+                  `Name: ${name}\n` +
+                  `Phone: ${phone}\n` +
+                  `Address: ${address}\n\n` +
+                  `Please confirm availability and payment details.`;
+  
+  // Encode for URL
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappURL = `https://wa.me/923026673345?text=${encodedMessage}`;
+  
+  // Open WhatsApp
+  window.open(whatsappURL, '_blank');
+  
+  // Close modal and reset form
+  document.getElementById('whatsappModal').style.display = 'none';
+  this.reset();
+});
+
+// Close modal when clicking outside
+window.addEventListener('click', function(e) {
+  if (e.target === document.getElementById('whatsappModal')) {
+    document.getElementById('whatsappModal').style.display = 'none';
+  }
+});
 
 
   </script>
